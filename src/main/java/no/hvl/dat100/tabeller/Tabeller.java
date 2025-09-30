@@ -12,7 +12,7 @@ public class Tabeller {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (int i = 0; i < tabell.length; i++) {
-            if (i > 0) sb.append(", ");
+            if (i > 0) sb.append(",");
             sb.append(tabell[i]);
         }
         sb.append("]");
