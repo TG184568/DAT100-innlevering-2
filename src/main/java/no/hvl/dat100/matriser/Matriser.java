@@ -53,16 +53,21 @@ public class Matriser {
 	
 	// e)
 	public static int[][] speile(int[][] matrise) {
-        int r = matrise.length;
-        int k = matrise[0].length;
-        int[][] transponert = new int[r][k];
+        int n = matrise.length;
+        int[][] s = new int[n][n];
 
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < k; j++) {
-                transponert[i][j] = matrise[i][j];
+        for (int i = 0; i < n; i++) {
+            System.arraycopy(matrise[i], 0, s[i], 0, n);
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int tmp = s[i][j];
+                s[i][j] = s[j][i];
+                s[j][i] = tmp;
             }
         }
-        return transponert;
+        return s;
     }
 
 	// f)
